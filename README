@@ -1,0 +1,24 @@
+Requires Node.Js v16.6.0 or higher
+
+Make sure to run:
+	npm init -y
+	npm install discord.js @discordjs/builders @discordjs/rest discord-api-types
+
+Add your configuration info into a file 'config.json':
+
+{
+	"token": "your-token-goes-here",
+	"clientId": "your-clientId-goes-here",
+	"guildId": "your-guildId-goes-here"
+}
+
+Once you've done that you can deploy any commands by running:
+	node deployCommands.js
+
+And then you're bot is ready to be brought online, run:
+	node index.js
+
+Go ahead and try a slash command in your test server:
+	/ping
+
+You should get a response... if not, you did sum'n wrong
