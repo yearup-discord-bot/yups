@@ -3,8 +3,6 @@ launch.sh
 # Config
 config.json
 
-common/
-
 # Logs
 logs
 *.log
