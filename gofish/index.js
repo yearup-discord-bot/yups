@@ -56,7 +56,8 @@ async function game( n, ...usernames )
 	{
 		// reset turn if out of bounds
 		if ( turn < 0 )
-			turn = players.length - 1;
+			break;
+			// turn = players.length - 1;
 
 		console.log(`It's ${players[turn].name}'s turn!`);
 
