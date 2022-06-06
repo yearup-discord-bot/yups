@@ -2,32 +2,34 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 
 async function execute(interaction) {
 	let track = interaction.options.getString('track');
-	// let now = new Date('June 10, 2022 08:29:00');
 	let now = new Date();
 	let epoch = now.getTime();
-	let nowMsg = 'This is the zoom link for class right now: ';
-	let nextMsg = 'This is the link for the next class:'
+	let nowMsg = "This is the zoom link for class right now: ";
+	let nextMsg = "This is the link for the next class:"
 
+	console.log(getClass(new Date().setDate(5));
+
+	console.log("failed to find class @ " + now);
+	await interaction.reply({content: this.zoom_links["no"], ephemeral: true});
+}
+
+function getClass()
+{
 	for ( i = 0; i < this.date_thresholds.length; i++ )
 	{
 		if (epoch >= this.date_thresholds[i][0] && epoch < this.date_thresholds[i][1])
 		{
-			if (track === 'app_dev')
+			if (track === "app_dev")
 			{
-				let msg = i >= ad_links.length - 1 ? nowMsg + ad_links[i][now.getDay()] : nowMsg + ad_links[i][now.getDay()] + '\n' + nextMsg + ad_links[i+1][now.getDay()];
-				await interaction.reply({content: msg, ephemeral: true});
+				return i >= ad_links.length - 1 ? nowMsg + ad_links[i][now.getDay()] : nowMsg + ad_links[i][now.getDay()] + "\n" + nextMsg + ad_links[i+1][now.getDay()];
 			}
-			if (track === 'qa')
+			if (track === "qa")
 			{
-				let msg = i >= qa_links.length - 1 ? nowMsg + qa_links[i][now.getDay()] : nowMsg + qa_links[i][now.getDay()] + '\n' + nextMsg + qa_links[i+1][now.getDay()];
-				await interaction.reply({content: msg, ephemeral: true});
+				return i >= qa_links.length - 1 ? nowMsg + qa_links[i][now.getDay()] : nowMsg + qa_links[i][now.getDay()] + "\n" + nextMsg + qa_links[i+1][now.getDay()];
 			}
 			return;
 		}
 	}
-
-	console.log('failed to find class @ ' + now);
-	await interaction.reply({content: 'No class.', ephemeral: true});
 }
 
 const date_thresholds = [
@@ -38,13 +40,13 @@ const date_thresholds = [
 ]
 
 const zoom_links = {
-	mmk:		'https://yearup.zoom.us/j/96949846942',
-	IT115:		'https://zoom.us/my/bill.newman',
-	BTM119:		'https://zoom.us/j/94020008562?pwd=RUlUcDVzYlpPQkdDNFZ5THh5MldnQT09',
-	BTM112:		'https://zoom.us/j/94673924563?pwd=ZWZKY21TWWl0Z0ZScFQ1dTAydExmQT09',
-	BTM100: 	'https://yearup.zoom.us/j/91797938950',
-	IT116: 		'https://zoom.us/j/3735217863',
-	aas:		'https://yearup.zoom.us/j/98981437398',
+	mmk:		"https://yearup.zoom.us/j/96949846942",
+	IT115:		"https://zoom.us/my/bill.newman",
+	BTM119:		"https://zoom.us/j/94020008562?pwd=RUlUcDVzYlpPQkdDNFZ5THh5MldnQT09",
+	BTM112:		"https://zoom.us/j/94673924563?pwd=ZWZKY21TWWl0Z0ZScFQ1dTAydExmQT09",
+	BTM100: 	"https://yearup.zoom.us/j/91797938950",
+	IT116: 		"https://zoom.us/j/3735217863",
+	aas:		"https://yearup.zoom.us/j/98981437398",
 }
 
 const qa_links = [
