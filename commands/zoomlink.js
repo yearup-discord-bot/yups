@@ -10,6 +10,8 @@ async function execute(interaction) {
 
 	for ( i = 0; i < this.date_thresholds.length; i++ )
 	{
+		console.log(epoch);
+		console.log(date_thresholds[i][0] + ' - ' + date_thresholds[i][1]);
 		if (epoch >= this.date_thresholds[i][0] && epoch < this.date_thresholds[i][1])
 		{
 			if (track === 'app_dev')
