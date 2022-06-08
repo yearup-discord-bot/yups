@@ -15,9 +15,9 @@ async function execute(interaction) {
 		[new Date().setHours(13, 50), 	new Date().setHours(15, 30)]		// fourth period
 	]
 
-	for ( i = 0; i < this.date_thresholds.length; i++ )
+	for ( i = 0; i < date_thresholds.length; i++ )
 	{
-		if (epoch >= this.date_thresholds[i][0] && epoch < this.date_thresholds[i][1])
+		if (epoch >= date_thresholds[i][0] && epoch < date_thresholds[i][1])
 		{
 			if (track === 'app_dev')
 			{
