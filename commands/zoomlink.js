@@ -21,12 +21,12 @@ async function execute(interaction) {
 		{
 			if (track === 'app_dev')
 			{
-				let msg = i >= ad_links.length - 1 ? nowMsg + ad_links[i][now.getDay()] : nowMsg + ad_links[i][now.getDay()] + '\n' + nextMsg + ad_links[i+1][now.getDay()];
+				let msg = i >= this.ad_links.length - 1 ? nowMsg + ad_links[i][now.getDay()] : nowMsg + ad_links[i][now.getDay()] + '\n' + nextMsg + ad_links[i+1][now.getDay()];
 				await interaction.reply({content: msg, ephemeral: true});
 			}
 			if (track === 'qa')
 			{
-				let msg = i >= qa_links.length - 1 ? nowMsg + qa_links[i][now.getDay()] : nowMsg + qa_links[i][now.getDay()] + '\n' + nextMsg + qa_links[i+1][now.getDay()];
+				let msg = i >= this.qa_links.length - 1 ? nowMsg + qa_links[i][now.getDay()] : nowMsg + qa_links[i][now.getDay()] + '\n' + nextMsg + qa_links[i+1][now.getDay()];
 				await interaction.reply({content: msg, ephemeral: true});
 			}
 			return;
