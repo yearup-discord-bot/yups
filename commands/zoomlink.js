@@ -8,8 +8,17 @@ async function execute(interaction) {
 	let nowMsg = 'This is the zoom link for class right now: ';
 	let nextMsg = 'This is the link for the next class:'
 
+	const date_thresholds = [
+		[new Date().setHours(8, 0), 	new Date().setHours(9, 50)],		// first period
+		[new Date().setHours(9, 50), 	new Date().setHours(11, 30)],		// second period
+		[new Date().setHours(11, 30), 	new Date().setHours(13, 50)],		// third period
+		[new Date().setHours(13, 50), 	new Date().setHours(15, 30)]		// fourth period
+	]
+
 	for ( i = 0; i < this.date_thresholds.length; i++ )
 	{
+		console.log(epoch);
+		console.log(date_thresholds[i][0] + ' - ' + date_thresholds[i][1]);
 		if (epoch >= this.date_thresholds[i][0] && epoch < this.date_thresholds[i][1])
 		{
 			if (track === 'app_dev')
@@ -30,12 +39,7 @@ async function execute(interaction) {
 	await interaction.reply({content: 'No class.', ephemeral: true});
 }
 
-const date_thresholds = [
-	[new Date().setHours(8, 0), 	new Date().setHours(9, 50)],		// first period
-	[new Date().setHours(9, 50), 	new Date().setHours(11, 30)],		// second period
-	[new Date().setHours(11, 30), 	new Date().setHours(13, 50)],		// third period
-	[new Date().setHours(13, 50), 	new Date().setHours(15, 30)]		// fourth period
-]
+
 
 const zoom_links = {
 	mmk:		'https://yearup.zoom.us/j/96949846942',
@@ -73,7 +77,6 @@ module.exports = {
 		.addChoices({name: 'Application Dev', value: 'app_dev'})
 		.addChoices({name: 'Quality Assurance', value: 'qa'})),
 	execute,
-	date_thresholds,
 	zoom_links,
 	qa_links,
 	ad_links
