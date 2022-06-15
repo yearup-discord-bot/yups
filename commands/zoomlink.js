@@ -42,7 +42,7 @@ async function execute(interaction) {
 
 
 const zoom_links = {
-	mmk:		'https://yearup.zoom.us/j/96949846942',
+	mmk:		'https://yearup.zoom.us/j/95610836882',
 	IT115:		'https://zoom.us/my/bill.newman',
 	BTM119:		'https://zoom.us/j/94020008562?pwd=RUlUcDVzYlpPQkdDNFZ5THh5MldnQT09',
 	BTM112:		'https://zoom.us/j/94673924563?pwd=ZWZKY21TWWl0Z0ZScFQ1dTAydExmQT09',
